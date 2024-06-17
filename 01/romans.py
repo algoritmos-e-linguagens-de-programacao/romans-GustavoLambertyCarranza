@@ -1,5 +1,5 @@
-def int_to_roman(num):
-    Num = int(input("Insira seu número: "))
+def int_to_roman():
+    Num = 3923
     Num2 = Num // 1000
     Num3 = (Num % 1000) // 100
     Num4 = (Num % 100) // 10
@@ -12,11 +12,12 @@ def int_to_roman(num):
 
     romano_id = Milhar[Num2] + Centena[Num3] + Dezena[Num4] + Unidade[Num5]
 
-print(romano_id)
+    return romano_id
+print(int_to_roman())
 
 
 def roman_to_int():
-    roman = input("Insira seu número em algarismos romanos: ")
+    roman = "V"
 
     nums = {'M': 1000,
             'D': 500,
