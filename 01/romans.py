@@ -1,31 +1,22 @@
-def int_to_roman():
-    Num = 3923
-    Num2 = Num // 1000
-    Num3 = (Num % 1000) // 100
-    Num4 = (Num % 100) // 10
-    Num5 = Num % 10
+def int_to_roman(num):
+    """
+    Converte um número inteiro para numeral romano.
+    """
+    Milhar = ["", "M", "MM", "MMM"]
+    Centena = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+    Dezena = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+    Unidade = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
 
-    Milhar = ["", "m", "mm", "mmm"]
-    Centena = ["", "c", "cc", "ccc", "cd", "d", "dc", "dcc", "dccc", "cm"]
-    Dezena = ["", "x", "xx", "xxx", "xl", "l", "lx", "lxx", "lxxx", "xc"]
-    Unidade = ["", "i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix"]
-
-    romano_id = Milhar[Num2] + Centena[Num3] + Dezena[Num4] + Unidade[Num5]
+    romano_id = Milhar[num // 1000] + Centena[(num % 1000) // 100] + \
+                Dezena[(num % 100) // 10] + Unidade[num % 10]
 
     return romano_id
-print(int_to_roman())
 
-
-def roman_to_int():
-    roman = "V"
-
-    nums = {'M': 1000,
-            'D': 500,
-            'C': 100,
-            'L': 50,
-            'X': 10,
-            'V': 5,
-            'I': 1}
+def roman_to_int(roman):
+    """
+    Converte um numeral romano para um número inteiro.
+    """
+    nums = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
 
     roman = roman.upper()
     total = 0
@@ -41,4 +32,6 @@ def roman_to_int():
 
     return total
 
-print(roman_to_int())
+# Exemplos de uso
+print(int_to_roman(3923))
+print(roman_to_int('V'))
