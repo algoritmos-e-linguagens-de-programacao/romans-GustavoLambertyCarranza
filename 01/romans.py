@@ -1,7 +1,4 @@
 def int_to_roman(num):
-    """
-    Converte um número inteiro para numeral romano.
-    """
     Milhar = ["", "M", "MM", "MMM"]
     Centena = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
     Dezena = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
@@ -13,9 +10,6 @@ def int_to_roman(num):
     return romano_id
 
 def roman_to_int(roman):
-    """
-    Converte um numeral romano para um número inteiro.
-    """
     nums = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
 
     roman = roman.upper()
@@ -32,6 +26,6 @@ def roman_to_int(roman):
 
     return total
 
-# Exemplos de uso
 print(int_to_roman(3923))
 print(roman_to_int('V'))
+
